@@ -724,11 +724,11 @@ CF_EXPORT void _NS_pthread_setname_np(const char *name);
 #define pthread_setname_np _NS_pthread_setname_np
 #endif
 
-#if DEPLOYMENT_TARGET_WINDOWS
+
 // replacement for DISPATCH_QUEUE_OVERCOMMIT until we get a bug fix in dispatch on Windows
 // <rdar://problem/7923891> dispatch on Windows: Need queue_private.h
 #define DISPATCH_QUEUE_OVERCOMMIT 2
-#endif
+#define DISPATCH_QUEUE_PRIORITY_BACKGROUND INT16_MIN
 
 #if DEPLOYMENT_TARGET_WINDOWS
 CF_PRIVATE const wchar_t *_CFDLLPath(void);
@@ -767,7 +767,6 @@ CF_INLINE const char *CFPathRelativeToAppleFrameworksRoot(const char *path, Bool
 }
 
 #include <dispatch/dispatch.h>
-#include <dispatch/private.h>
 
 #if (DEPLOYMENT_TARGET_MACOSX || DEPLOYMENT_TARGET_EMBEDDED)
 

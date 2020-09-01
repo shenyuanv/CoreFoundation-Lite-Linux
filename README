@@ -32,7 +32,7 @@ On Linux
 ---- ---- ---- ---- ----
 
 First, you will need to fetch a few dependencies of CoreFoundation.
-
+sudo apt install libicu-dev libdispatch-dev libblockruntime-dev
 * clang compiler 2.8 or later
    http://clang.llvm.org/
 

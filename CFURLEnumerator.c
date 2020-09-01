@@ -17,7 +17,7 @@
 #if TARGET_OS_MAC
 #include <sys/syslimits.h>
 #else
-#include <sys/limits.h>
+#include <limits.h>
 #endif
 
 extern const CFStringRef NSURLErrorKey;
